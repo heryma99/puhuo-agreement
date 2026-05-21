@@ -2,607 +2,514 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>鋪貨業務合作協議</title>
 <style>
-  :root {
-    --primary: #1a365d;
-    --primary-light: #2b6cb0;
-    --accent: #c53030;
-    --bg: #f7fafc;
-    --card-bg: #ffffff;
-    --border: #e2e8f0;
-    --text: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  @page {
+    size: A4;
+    margin: 18mm 15mm 15mm 15mm;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "PingFang TC", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.8;
-    font-size: 14.5px;
+    font-family: "Microsoft JhengHei", "PingFang TC", "SimSun", serif;
+    font-size: 12pt;
+    line-height: 1.65;
+    color: #000;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  .container {
-    max-width: 820px;
+  .page {
+    width: 210mm;
+    min-height: 297mm;
     margin: 0 auto;
-    padding: 24px 20px 80px;
+    padding: 12mm 14mm 10mm 14mm;
   }
 
-  /* Header */
-  .doc-header {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: #fff;
-    padding: 36px 32px;
-    border-radius: 10px;
-    margin-bottom: 28px;
-    box-shadow: var(--shadow-md);
-  }
-
-  .doc-header h1 {
-    font-size: 26px;
+  /* ── Title ── */
+  .doc-title {
+    text-align: center;
+    font-size: 20pt;
     font-weight: 700;
-    margin-bottom: 6px;
+    letter-spacing: 4pt;
+    margin-bottom: 3mm;
   }
 
-  .doc-header .subtitle {
-    font-size: 13px;
-    opacity: 0.85;
-  }
-
-  /* Meta info */
-  .meta-box {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px 28px;
-    margin-bottom: 28px;
-    box-shadow: var(--shadow);
+  .doc-sub {
+    text-align: center;
+    font-size: 9pt;
+    color: #666;
+    margin-bottom: 6mm;
   }
 
   .contract-no {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 20px;
     text-align: right;
+    font-size: 10pt;
+    color: #333;
+    margin-bottom: 5mm;
   }
 
-  .party {
-    margin-bottom: 16px;
+  /* ── Party Table (side by side) ── */
+  .party-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5mm;
+    font-size: 10.5pt;
+    line-height: 1.6;
   }
 
-  .party:last-child { margin-bottom: 0; }
-
-  .party-label {
+  .party-table th {
+    background: #f0f0f0;
     font-weight: 700;
-    font-size: 15px;
-    color: var(--primary);
-    margin-bottom: 6px;
+    text-align: center;
+    padding: 3px 8px;
+    border: 1px solid #999;
+    width: 50%;
+    font-size: 11pt;
   }
 
-  .party-info {
-    font-size: 13.5px;
-    color: var(--text-secondary);
-    line-height: 2;
+  .party-table td {
+    padding: 2px 6px;
+    border: 1px solid #bbb;
+    vertical-align: top;
+    height: 22px;
   }
 
-  .party-info span {
-    display: inline-block;
-    min-width: 80px;
+  .party-table .label-cell {
+    width: 72px;
+    text-align: right;
+    padding-right: 4px;
+    font-weight: 600;
+    background: #fafafa;
+    border: 1px solid #bbb;
   }
 
+  /* ── Preamble ── */
   .preamble {
-    background: #f0f7ff;
-    border-left: 3px solid var(--primary-light);
-    padding: 16px 20px;
-    margin-bottom: 28px;
-    border-radius: 0 6px 6px 0;
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.9;
+    text-indent: 2em;
+    margin-bottom: 4mm;
+    font-size: 11pt;
   }
 
-  /* Sections */
-  .section {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
+  /* ── Article sections ── */
+  .article {
+    margin-bottom: 3mm;
   }
 
-  .section-title {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: #fff;
-    padding: 12px 24px;
-    font-size: 16px;
+  .article-title {
+    font-size: 12pt;
     font-weight: 700;
-  }
-
-  .section-body {
-    padding: 20px 24px;
+    margin-bottom: 1.5mm;
+    text-align: center;
   }
 
   .clause {
-    margin-bottom: 16px;
-    font-size: 14px;
-    line-height: 1.85;
-    color: var(--text);
+    margin-bottom: 1.5mm;
+    font-size: 10.5pt;
+    text-indent: 2em;
+    text-align: justify;
   }
-
-  .clause:last-child { margin-bottom: 0; }
 
   .clause-title {
     font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 6px;
-    font-size: 14.5px;
+    text-indent: 0;
+    margin-bottom: 0.5mm;
+    font-size: 10.5pt;
   }
 
   .clause ol, .clause ul {
-    padding-left: 20px;
-    margin-top: 4px;
+    padding-left: 2em;
+    margin: 0.5mm 0 1mm 0;
   }
 
   .clause li {
-    margin-bottom: 4px;
+    margin-bottom: 0.5mm;
+    text-indent: 0;
   }
 
-  .clause strong {
-    color: var(--primary);
-  }
+  .clause strong { font-weight: 700; }
 
-  /* Tables */
-  .contract-table {
+  /* ── Inline tables ── */
+  .tbl {
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 13.5px;
+    margin: 1.5mm 0 2.5mm 0;
+    font-size: 10pt;
+    line-height: 1.5;
   }
 
-  .contract-table th {
-    background: #edf2f7;
+  .tbl th {
+    background: #e8e8e8;
     font-weight: 700;
-    text-align: left;
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    color: var(--primary);
+    text-align: center;
+    padding: 2px 6px;
+    border: 1px solid #999;
   }
 
-  .contract-table td {
-    padding: 8px 12px;
-    border: 1px solid var(--border);
+  .tbl td {
+    padding: 2px 6px;
+    border: 1px solid #bbb;
     vertical-align: top;
   }
 
-  .contract-table tr:nth-child(even) td {
-    background: #fafbfc;
-  }
-
-  /* Note */
+  /* ── Note box ── */
   .note {
-    background: #fffbeb;
-    border-left: 3px solid #d69e2e;
-    padding: 10px 16px;
-    margin: 10px 0;
-    border-radius: 0 6px 6px 0;
-    font-size: 13.5px;
-    color: #744210;
-    line-height: 1.75;
+    background: #f9f6e8;
+    border: 1px solid #c9b85c;
+    padding: 2px 6px;
+    margin: 1.5mm 0;
+    font-size: 9.5pt;
+    color: #555;
   }
 
-  /* Signature */
-  .signature-section {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 32px 28px;
-    margin-top: 32px;
-    box-shadow: var(--shadow);
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 3mm 0;
   }
 
-  .sig-block {
-    margin-bottom: 36px;
+  /* ── Signature (side by side) ── */
+  .sig-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6mm;
+    font-size: 10.5pt;
   }
 
-  .sig-block:last-child { margin-bottom: 0; }
+  .sig-table td {
+    width: 50%;
+    vertical-align: top;
+    padding: 0;
+    line-height: 2.2;
+  }
 
-  .sig-label {
+  .sig-table .sig-title {
     font-weight: 700;
-    font-size: 15px;
-    color: var(--primary);
-    margin-bottom: 16px;
+    font-size: 11pt;
+    margin-bottom: 2mm;
   }
 
-  .sig-line {
-    border-bottom: 1px solid var(--border);
-    height: 36px;
-    margin-bottom: 10px;
+  .sig-table .sig-field {
+    padding-left: 2em;
   }
 
-  .sig-field {
-    font-size: 13.5px;
-    color: var(--text-muted);
-    margin-bottom: 8px;
+  .sig-table .sig-line {
+    display: inline-block;
+    width: 120px;
+    border-bottom: 1px solid #333;
+    margin-left: 4px;
   }
 
-  /* Print */
+  /* ── Print overrides ── */
   @media print {
     body { background: #fff; }
-    .container { padding: 0; max-width: 100%; }
-    .section { box-shadow: none; break-inside: avoid; }
-    .doc-header { box-shadow: none; }
-    .meta-box, .signature-section { box-shadow: none; }
+    .page {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .article {
+      break-inside: avoid;
+    }
   }
 
-  /* Mobile */
-  @media (max-width: 640px) {
-    .container { padding: 12px 10px 60px; }
-    .doc-header { padding: 24px 18px; }
-    .doc-header h1 { font-size: 20px; }
-    .section-body { padding: 16px 14px; }
-    .contract-table { font-size: 12px; }
-    .contract-table th, .contract-table td { padding: 6px 8px; }
+  /* ── Screen fallback ── */
+  @media screen {
+    body { background: #e8e8e8; }
+    .page {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="page">
 
-  <!-- Header -->
-  <div class="doc-header">
-    <h1>鋪貨業務合作協議</h1>
-    <div class="subtitle">簡易合作協議 · 標準模板</div>
-  </div>
+  <div class="doc-title">鋪貨業務合作協議</div>
+  <div class="doc-sub">簡易合作協議 · 標準模板</div>
+  <div class="contract-no">合同編號：PH-[年份]-[序號]</div>
 
-  <!-- Meta -->
-  <div class="meta-box">
-    <div class="contract-no">合同編號：PH-[年份]-[序號]</div>
+  <!-- 甲乙方并排 -->
+  <table class="party-table">
+    <tr>
+      <th>甲方（公司）</th>
+      <th>乙方（供應商）</th>
+    </tr>
+    <tr>
+      <td class="label-cell">公司名稱</td>
+      <td class="label-cell">公司名稱</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="label-cell">信用代碼</td>
+      <td class="label-cell">信用代碼</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="label-cell">註冊地址</td>
+      <td class="label-cell">註冊地址</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="label-cell">法定代表人</td>
+      <td class="label-cell">法定代表人</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
 
-    <div class="party">
-      <div class="party-label">甲方（公司）</div>
-      <div class="party-info">
-        <div><span>公司名稱：</span>[公司全稱]</div>
-        <div><span>信用代碼：</span>[統一社會信用代碼]</div>
-        <div><span>註冊地址：</span>[註冊地址]</div>
-        <div><span>法定代表人：</span>[姓名]</div>
-      </div>
-    </div>
-
-    <div class="party">
-      <div class="party-label">乙方（供應商）</div>
-      <div class="party-info">
-        <div><span>公司名稱：</span>[供應商全稱]</div>
-        <div><span>信用代碼：</span>[統一社會信用代碼]</div>
-        <div><span>註冊地址：</span>[註冊地址]</div>
-        <div><span>法定代表人：</span>[姓名]</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Preamble -->
+  <!-- 鑒於 -->
   <div class="preamble">
     鑒於甲方從事電子商務及跨境貿易業務，乙方為商品供應商，雙方本着平等互利、誠實信用的原則，就「鋪貨」合作模式達成如下協議：
   </div>
 
   <!-- 第一條 -->
-  <div class="section">
-    <div class="section-title">第一條 合作模式</div>
-    <div class="section-body">
-
-      <div class="clause">
-        <div class="clause-title">1.1 鋪貨定義</div>
-        乙方將商品預先存入甲方指定倉庫（以下簡稱「PuHuo 倉」），貨款暫不結算，待滿足本協議約定的結算條件後再行付款。
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">1.2 指定入庫倉</div>
-        所有鋪貨商品<strong>僅能入庫至 PuHuo 倉</strong>，乙方不得向其他倉庫下單發貨。
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">1.3 結算方式</div>
-        本協議項下鋪貨商品適用以下兩種結算方式，乙方在下單時須明確選擇其一：
-        <table class="contract-table">
-          <thead>
-            <tr><th>結算方式</th><th>標籤</th><th>結算觸發條件</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>方式①：以銷定結</strong></td><td>鋪貨</td><td>商品完成有效銷售（客戶退貨期結束且無退貨）</td></tr>
-            <tr><td><strong>方式②：調拔結算</strong></td><td>鋪貨+調拔結算</td><td>商品從 PuHuo 倉調拔至其他倉庫（視同銷售）</td></tr>
-          </tbody>
-        </table>
-        <div class="note">「有效銷售」定義：客戶購買且在退貨期結束後未發生退貨，方視為銷售成立。</div>
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">1.4 PO 單管理</div>
-        乙方通過甲方 ERP 系統下 PO（採購訂單），所有鋪貨 PO 單須經甲方採購人員審核通過後方可執行。審核不通過的，乙方應按甲方反饋修改後重新提交。
-      </div>
-
+  <div class="article">
+    <div class="article-title">第一條 合作模式</div>
+    <div class="clause"><span class="clause-title">1.1 鋪貨定義</span>乙方將商品預先存入甲方指定倉庫（以下簡稱「PuHuo 倉」），貨款暫不結算，待滿足本協議約定的結算條件後再行付款。</div>
+    <div class="clause"><span class="clause-title">1.2 指定入庫倉</span>所有鋪貨商品僅能入庫至 PuHuo 倉，乙方不得向其他倉庫下單發貨。</div>
+    <div class="clause">
+      <span class="clause-title">1.3 結算方式</span>本協議項下鋪貨商品適用以下兩種結算方式，乙方在下單時須明確選擇其一：
+      <table class="tbl">
+        <tr><th>結算方式</th><th>標籤</th><th>結算觸發條件</th></tr>
+        <tr><td><strong>方式①：以銷定結</strong></td><td>鋪貨</td><td>商品完成有效銷售（客戶退貨期結束且無退貨）</td></tr>
+        <tr><td><strong>方式②：調拔結算</strong></td><td>鋪貨+調拔結算</td><td>商品從 PuHuo 倉調拔至其他倉庫（視同銷售）</td></tr>
+      </table>
+      <div class="note">「有效銷售」定義：客戶購買且在退貨期結束後未發生退貨，方視為銷售成立。</div>
     </div>
+    <div class="clause"><span class="clause-title">1.4 PO 單管理</span>乙方通過甲方 ERP 系統下 PO（採購訂單），所有鋪貨 PO 單須經甲方採購人員審核通過後方可執行。審核不通過的，乙方應按甲方反饋修改後重新提交。</div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第二條 -->
-  <div class="section">
-    <div class="section-title">第二條 貨權與風險</div>
-    <div class="section-body">
-
-      <div class="clause">
-        <div class="clause-title">2.1 鋪貨期間貨權歸屬</div>
-        鋪貨商品自入庫 PuHuo 倉之日起至滿足結算條件並完成結算付款前，商品所有權歸<strong>乙方</strong>所有。甲方不承擔鋪貨期間的庫存損失風險。
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">2.2 貨權轉移時點</div>
-        <table class="contract-table">
-          <thead>
-            <tr><th>結算方式</th><th>貨權轉移時點</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>方式①（以銷定結）</td><td>客戶退貨期（簽收後 8 天）結束且無退貨，甲方完成結算付款後</td></tr>
-            <tr><td>方式②（調拔結算）</td><td>調拔出庫確認完成後，貨權即時轉移至甲方</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">2.3 調拔不可逆</div>
-        方式②下，調拔操作一旦完成，無論後續商品是否實際銷售，均須結算，乙方不得以未實際銷售為由拒絕結算。
-      </div>
-
+  <div class="article">
+    <div class="article-title">第二條 貨權與風險</div>
+    <div class="clause"><span class="clause-title">2.1 鋪貨期間貨權歸屬</span>鋪貨商品自入庫 PuHuo 倉之日起至滿足結算條件並完成結算付款前，商品所有權歸乙方所有。甲方不承擔鋪貨期間的庫存損失風險。</div>
+    <div class="clause">
+      <span class="clause-title">2.2 貨權轉移時點</span>
+      <table class="tbl">
+        <tr><th>結算方式</th><th>貨權轉移時點</th></tr>
+        <tr><td>方式①（以銷定結）</td><td>客戶退貨期（簽收後 8 天）結束且無退貨，甲方完成結算付款後</td></tr>
+        <tr><td>方式②（調拔結算）</td><td>調拔出庫確認完成後，貨權即時轉移至甲方</td></tr>
+      </table>
     </div>
+    <div class="clause"><span class="clause-title">2.3 調拔不可逆</span>方式②下，調拔操作一旦完成，無論後續商品是否實際銷售，均須結算，乙方不得以未實際銷售為由拒絕結算。</div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第三條 -->
-  <div class="section">
-    <div class="section-title">第三條 結算與付款</div>
-    <div class="section-body">
-
-      <div class="clause">
-        <div class="clause-title">3.1 方式①結算規則（以銷定結）</div>
-        <ol>
-          <li>客戶簽收商品後進入 <strong>8 天</strong>退貨期</li>
-          <li>退貨期結束且無未關閉退貨申請的，系統自動生成應付帳款</li>
-          <li>甲方按約定付款週期結算付款</li>
-          <li>甲方付款前須核查該批次是否存在未關閉退貨申請，有則暫緩結算</li>
-        </ol>
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">3.2 方式②結算規則（調拔結算）</div>
-        <ol>
-          <li>商品調拔出庫確認後，系統即時生成應付帳款</li>
-          <li>甲方按<strong>月結方式</strong>，將該筆應付納入下一個月結帳單一併結算</li>
-          <li>調拔操作須經甲方審批後方可執行</li>
-        </ol>
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">3.3 付款方式</div>
-        甲方通過銀行轉帳方式支付至乙方指定銀行帳戶。
-      </div>
-
+  <div class="article">
+    <div class="article-title">第三條 結算與付款</div>
+    <div class="clause">
+      <span class="clause-title">3.1 方式①結算規則（以銷定結）</span>
+      <ol>
+        <li>客戶簽收商品後進入 <strong>8 天</strong>退貨期</li>
+        <li>退貨期結束且無未關閉退貨申請的，系統自動生成應付帳款</li>
+        <li>甲方按約定付款週期結算付款</li>
+        <li>甲方付款前須核查該批次是否存在未關閉退貨申請，有則暫緩結算</li>
+      </ol>
     </div>
+    <div class="clause">
+      <span class="clause-title">3.2 方式②結算規則（調拔結算）</span>
+      <ol>
+        <li>商品調拔出庫確認後，系統即時生成應付帳款</li>
+        <li>甲方按<strong>月結方式</strong>，將該筆應付納入下一個月結帳單一併結算</li>
+        <li>調拔操作須經甲方審批後方可執行</li>
+      </ol>
+    </div>
+    <div class="clause"><span class="clause-title">3.3 付款方式</span>甲方通過銀行轉帳方式支付至乙方指定銀行帳戶。</div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第四條 -->
-  <div class="section">
-    <div class="section-title">第四條 退貨期</div>
-    <div class="section-body">
-      <div class="clause">
-        客戶退貨期限為客戶簽收商品後 <strong>8 天</strong>。甲方設計付款時間在退貨期結束後，從源頭規避先付款再退貨的風險。
-      </div>
-    </div>
+  <div class="article">
+    <div class="article-title">第四條 退貨期</div>
+    <div class="clause">客戶退貨期限為客戶簽收商品後 <strong>8 天</strong>。甲方設計付款時間在退貨期結束後，從源頭規避先付款再退貨的風險。</div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第五條 -->
-  <div class="section">
-    <div class="section-title">第五條 退貨與退款處理</div>
-    <div class="section-body">
-
-      <div class="clause">
-        <div class="clause-title">5.1 客戶正常退貨（結算前）</div>
-        客戶在退貨期內申請退貨並退回商品的，該批貨物所有權始終歸乙方，不觸發結算，已佔用庫存釋放，貨物重新計入 PuHuo 倉鋪貨庫存。
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">5.2 質量問題退款（貨物不退回）</div>
-        因乙方產品質量問題導致甲方需對客戶退款但貨物無法退回的（如損耗、就地銷毀等）：
-        <ol>
-          <li>視為乙方未完成有效交付，<strong>不觸發結算</strong></li>
-          <li>該批次貨物成本損失由<strong>乙方自負</strong></li>
-          <li>甲方對客戶的退款，有權向乙方追索或從後續應付帳款中扣抵</li>
-        </ol>
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">5.3 已付款後客戶退貨</div>
-        因任何原因導致貨款已付但客戶隨後退貨的：
-        <ol>
-          <li>退貨一旦發生，視為貨物所有權自始未完成轉移，已付貨款須強制追回</li>
-          <li>退回貨款在<strong>下一個月結帳單中直接扣除</strong></li>
-          <li>若乙方無後續應付帳款可供扣除的，計入乙方應收帳款，甲方有權按合同追索</li>
-        </ol>
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">5.4 呆滯庫存退回</div>
-        鋪貨商品入庫後滿足以下<strong>任一條件</strong>的，甲方有權要求乙方退回該批次商品：
-        <ol>
-          <li>入庫已滿 <strong>30 天</strong>，且近 30 天無有效銷售，且該 SKU 可售庫存 &gt; 0</li>
-          <li>該 SKU 可售天數 &gt; <strong>360 天</strong></li>
-        </ol>
-        呆滯期間貨權始終歸乙方，不觸發結算。退回物流費由<strong>乙方承擔</strong>，乙方應配合甲方安排退回事宜。
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">5.5 質量問題退回供應商</div>
-        入庫時或入庫後發現商品存在質量問題的：
-        <ol>
-          <li>貨權始終未轉移，<strong>不觸發結算</strong></li>
-          <li>退回物流費、入庫前檢驗費及倉儲期間產生的損耗均由<strong>乙方承擔</strong></li>
-          <li>退回後原 PO 單關閉；乙方是否補發由其自行決定，若補發須按新 PO 單重新提交審核入庫</li>
-        </ol>
-      </div>
-
+  <div class="article">
+    <div class="article-title">第五條 退貨與退款處理</div>
+    <div class="clause"><span class="clause-title">5.1 客戶正常退貨（結算前）</span>客戶在退貨期內申請退貨並退回商品的，該批貨物所有權始終歸乙方，不觸發結算，已佔用庫存釋放，貨物重新計入 PuHuo 倉鋪貨庫存。</div>
+    <div class="clause">
+      <span class="clause-title">5.2 質量問題退款（貨物不退回）</span>因乙方產品質量問題導致甲方需對客戶退款但貨物無法退回的（如損耗、就地銷毀等）：
+      <ol>
+        <li>視為乙方未完成有效交付，<strong>不觸發結算</strong></li>
+        <li>該批次貨物成本損失由<strong>乙方自負</strong></li>
+        <li>甲方對客戶的退款，有權向乙方追索或從後續應付帳款中扣抵</li>
+      </ol>
+    </div>
+    <div class="clause">
+      <span class="clause-title">5.3 已付款後客戶退貨</span>因任何原因導致貨款已付但客戶隨後退貨的：
+      <ol>
+        <li>退貨一旦發生，視為貨物所有權自始未完成轉移，已付貨款須強制追回</li>
+        <li>退回貨款在<strong>下一個月結帳單中直接扣除</strong></li>
+        <li>若乙方無後續應付帳款可供扣除的，計入乙方應收帳款，甲方有權按合同追索</li>
+      </ol>
+    </div>
+    <div class="clause">
+      <span class="clause-title">5.4 呆滯庫存退回</span>鋪貨商品入庫後滿足以下<strong>任一條件</strong>的，甲方有權要求乙方退回該批次商品：
+      <ol>
+        <li>入庫已滿 <strong>30 天</strong>，且近 30 天無有效銷售，且該 SKU 可售庫存 &gt; 0</li>
+        <li>該 SKU 可售天數 &gt; <strong>360 天</strong></li>
+      </ol>
+      呆滯期間貨權始終歸乙方，不觸發結算。退回物流費由<strong>乙方承擔</strong>，乙方應配合甲方安排退回事宜。
+    </div>
+    <div class="clause">
+      <span class="clause-title">5.5 質量問題退回供應商</span>入庫時或入庫後發現商品存在質量問題的：
+      <ol>
+        <li>貨權始終未轉移，<strong>不觸發結算</strong></li>
+        <li>退回物流費、入庫前檢驗費及倉儲期間產生的損耗均由<strong>乙方承擔</strong></li>
+        <li>退回後原 PO 單關閉；乙方是否補發由其自行決定，若補發須按新 PO 單重新提交審核入庫</li>
+      </ol>
     </div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第六條 -->
-  <div class="section">
-    <div class="section-title">第六條 倉儲費與加工費</div>
-    <div class="section-body">
-
-      <div class="clause">
-        <div class="clause-title">6.1 倉儲費</div>
-        鋪貨商品在 PuHuo 倉存放期間的倉儲費由<strong>乙方承擔</strong>：
-        <ul>
-          <li><strong>月費率：</strong>$0.1 / 個 / 月</li>
-          <li><strong>日費率：</strong>$0.1 ÷ 30 = $0.00333 / 個 / 天（不足月按日折算）</li>
-          <li><strong>計費公式：</strong>倉儲費 = 數量 ×（滿月數 × $0.1 + 不足月天數 × $0.00333）</li>
-          <li><strong>停算時點：</strong>結算完成（貨權轉移）或退回供應商出庫確認之日</li>
-        </ul>
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">6.2 加工費</div>
-        對鋪貨商品進行加工處理的費用，按 <strong>$0.4 / 個</strong> 計收，由乙方承擔。
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">6.3 費用結算</div>
-        倉儲費與加工費計入乙方應付帳款，隨月結帳單定期對帳結算。
-      </div>
-
+  <div class="article">
+    <div class="article-title">第六條 倉儲費與加工費</div>
+    <div class="clause">
+      <span class="clause-title">6.1 倉儲費</span>鋪貨商品在 PuHuo 倉存放期間的倉儲費由<strong>乙方承擔</strong>：
+      <ul>
+        <li><strong>月費率：</strong>$0.1 / 個 / 月</li>
+        <li><strong>日費率：</strong>$0.1 ÷ 30 = $0.00333 / 個 / 天（不足月按日折算）</li>
+        <li><strong>計費公式：</strong>倉儲費 = 數量 ×（滿月數 × $0.1 + 不足月天數 × $0.00333）</li>
+        <li><strong>停算時點：</strong>結算完成（貨權轉移）或退回供應商出庫確認之日</li>
+      </ul>
     </div>
+    <div class="clause"><span class="clause-title">6.2 加工費</span>對鋪貨商品進行加工處理的費用，按 <strong>$0.4 / 個</strong> 計收，由乙方承擔。</div>
+    <div class="clause"><span class="clause-title">6.3 費用結算</span>倉儲費與加工費計入乙方應付帳款，隨月結帳單定期對帳結算。</div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第七條 -->
-  <div class="section">
-    <div class="section-title">第七條 雙方權利與義務</div>
-    <div class="section-body">
-
-      <div class="clause">
-        <div class="clause-title">7.1 甲方權利與義務</div>
-        <ol>
-          <li>對乙方提交的鋪貨 PO 單進行審核，有權根據庫存深度、銷售情況等因素決定是否通過</li>
-          <li>對高風險 SKU 進行加強審核（入庫已滿 30 天且近 30 天無動銷且可售庫存 &gt; 0，或可售天數 &gt; 360 天）</li>
-          <li>按本協議約定進行結算付款</li>
-          <li>按本協議約定收取倉儲費與加工費</li>
-          <li>對呆滯或質量問題商品有權要求乙方退回</li>
-          <li>已付款後客戶退貨的，有權追回貨款</li>
-        </ol>
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">7.2 乙方權利與義務</div>
-        <ol>
-          <li>通過甲方 ERP 系統下 PO 單，選擇正確結算標籤，預約送貨</li>
-          <li>確保所供商品的品質符合約定標準</li>
-          <li>承擔鋪貨期間的倉儲費與加工費</li>
-          <li>呆滯或質量問題商品按甲方要求配合退回，並承擔退回物流費及相關損失</li>
-          <li>質量問題導致的客戶退款損失由乙方承擔</li>
-          <li>已付款後客戶退貨的，配合甲方退回貨款</li>
-        </ol>
-      </div>
-
+  <div class="article">
+    <div class="article-title">第七條 雙方權利與義務</div>
+    <div class="clause">
+      <span class="clause-title">7.1 甲方權利與義務</span>
+      <ol>
+        <li>對乙方提交的鋪貨 PO 單進行審核，有權根據庫存深度、銷售情況等因素決定是否通過</li>
+        <li>對高風險 SKU 進行加強審核（入庫已滿 30 天且近 30 天無動銷且可售庫存 &gt; 0，或可售天數 &gt; 360 天）</li>
+        <li>按本協議約定進行結算付款</li>
+        <li>按本協議約定收取倉儲費與加工費</li>
+        <li>對呆滯或質量問題商品有權要求乙方退回</li>
+        <li>已付款後客戶退貨的，有權追回貨款</li>
+      </ol>
+    </div>
+    <div class="clause">
+      <span class="clause-title">7.2 乙方權利與義務</span>
+      <ol>
+        <li>通過甲方 ERP 系統下 PO 單，選擇正確結算標籤，預約送貨</li>
+        <li>確保所供商品的品質符合約定標準</li>
+        <li>承擔鋪貨期間的倉儲費與加工費</li>
+        <li>呆滯或質量問題商品按甲方要求配合退回，並承擔退回物流費及相關損失</li>
+        <li>質量問題導致的客戶退款損失由乙方承擔</li>
+        <li>已付款後客戶退貨的，配合甲方退回貨款</li>
+      </ol>
     </div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第八條 -->
-  <div class="section">
-    <div class="section-title">第八條 保密條款</div>
-    <div class="section-body">
-      <div class="clause">
-        雙方對在本協議履行過程中知悉的對方商業秘密（包括但不限於價格、庫存數據、客戶信息、銷售數據等）負有保密義務。未經對方書面同意，不得向第三方披露。保密義務在本協議終止後繼續有效，有效期為協議終止後 <strong>2 年</strong>。
-      </div>
-    </div>
+  <div class="article">
+    <div class="article-title">第八條 保密條款</div>
+    <div class="clause">雙方對在本協議履行過程中知悉的對方商業秘密（包括但不限於價格、庫存數據、客戶信息、銷售數據等）負有保密義務。未經對方書面同意，不得向第三方披露。保密義務在本協議終止後繼續有效，有效期為協議終止後 <strong>2 年</strong>。</div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第九條 -->
-  <div class="section">
-    <div class="section-title">第九條 協議期限</div>
-    <div class="section-body">
-
-      <div class="clause">
-        <div class="clause-title">9.1 有效期</div>
-        本協議自雙方簽署之日起生效，有效期為 <strong>1 年</strong>。期滿前 30 天，任何一方未以書面形式提出不續約的，本協議自動續期 1 年，以此類推。
-      </div>
-
-      <div class="clause">
-        <div class="clause-title">9.2 終止</div>
-        任何一方有權提前 30 天以書面形式通知對方終止本協議。協議終止後：
-        <ol>
-          <li>對協議終止前已入庫且尚未結算的商品，按本協議約定繼續執行至結算完成或退回乙方</li>
-          <li>倉儲費計算至結算完成或退回出庫確認之日</li>
-          <li>保密條款繼續有效</li>
-        </ol>
-      </div>
-
+  <div class="article">
+    <div class="article-title">第九條 協議期限</div>
+    <div class="clause"><span class="clause-title">9.1 有效期</span>本協議自雙方簽署之日起生效，有效期為 <strong>1 年</strong>。期滿前 30 天，任何一方未以書面形式提出不續約的，本協議自動續期 1 年，以此類推。</div>
+    <div class="clause">
+      <span class="clause-title">9.2 終止</span>任何一方有權提前 30 天以書面形式通知對方終止本協議。協議終止後：
+      <ol>
+        <li>對協議終止前已入庫且尚未結算的商品，按本協議約定繼續執行至結算完成或退回乙方</li>
+        <li>倉儲費計算至結算完成或退回出庫確認之日</li>
+        <li>保密條款繼續有效</li>
+      </ol>
     </div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第十條 -->
-  <div class="section">
-    <div class="section-title">第十條 違約責任</div>
-    <div class="section-body">
-      <div class="clause">
-        <ol>
-          <li>乙方提供質量不合格商品導致甲方損失的，乙方應全額賠償甲方因此遭受的損失</li>
-          <li>乙方拒絕配合呆滯退回的，甲方有權自行處置該批次商品，處置所得優先用於抵扣乙方欠付的倉儲費等費用</li>
-          <li>任何一方違反本協議約定的，應賠償對方因此遭受的直接經濟損失</li>
-        </ol>
-      </div>
+  <div class="article">
+    <div class="article-title">第十條 違約責任</div>
+    <div class="clause">
+      <ol>
+        <li>乙方提供質量不合格商品導致甲方損失的，乙方應全額賠償甲方因此遭受的損失</li>
+        <li>乙方拒絕配合呆滯退回的，甲方有權自行處置該批次商品，處置所得優先用於抵扣乙方欠付的倉儲費等費用</li>
+        <li>任何一方違反本協議約定的，應賠償對方因此遭受的直接經濟損失</li>
+      </ol>
     </div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第十一條 -->
-  <div class="section">
-    <div class="section-title">第十一條 爭議解決</div>
-    <div class="section-body">
-      <div class="clause">
-        本協議項下的爭議，雙方應協商解決；協商不成的，任何一方有權向甲方所在地有管轄權的人民法院提起訴訟。
-      </div>
-    </div>
+  <div class="article">
+    <div class="article-title">第十一條 爭議解決</div>
+    <div class="clause">本協議項下的爭議，雙方應協商解決；協商不成的，任何一方有權向甲方所在地有管轄權的人民法院提起訴訟。</div>
   </div>
+
+  <hr class="divider">
 
   <!-- 第十二條 -->
-  <div class="section">
-    <div class="section-title">第十二條 其他約定</div>
-    <div class="section-body">
-      <div class="clause">
-        <ol>
-          <li>本協議未盡事宜，雙方可另行簽訂補充協議。補充協議與本協議具有同等法律效力。</li>
-          <li>本協議一式兩份，甲乙雙方各執一份，具有同等法律效力。</li>
-        </ol>
-      </div>
+  <div class="article">
+    <div class="article-title">第十二條 其他約定</div>
+    <div class="clause">
+      <ol>
+        <li>本協議未盡事宜，雙方可另行簽訂補充協議。補充協議與本協議具有同等法律效力。</li>
+        <li>本協議一式兩份，甲乙雙方各執一份，具有同等法律效力。</li>
+      </ol>
     </div>
   </div>
 
-  <!-- Signature -->
-  <div class="signature-section">
-    <div class="sig-block">
-      <div class="sig-label">甲方（蓋章）</div>
-      <div class="sig-line"></div>
-      <div class="sig-field">法定代表人 / 授權代表簽字：_______________</div>
-      <div class="sig-field">日期：______年______月______日</div>
-    </div>
-    <div class="sig-block">
-      <div class="sig-label">乙方（蓋章）</div>
-      <div class="sig-line"></div>
-      <div class="sig-field">法定代表人 / 授權代表簽字：_______________</div>
-      <div class="sig-field">日期：______年______月______日</div>
-    </div>
-  </div>
+  <hr class="divider">
+
+  <!-- 簽章區（并排） -->
+  <table class="sig-table">
+    <tr>
+      <td>
+        <div class="sig-title">甲方（蓋章）</div>
+        <div class="sig-field">法定代表人 / 授權代表：<span class="sig-line">&nbsp;</span></div>
+        <div class="sig-field">日期：<span class="sig-line">&nbsp;</span></div>
+      </td>
+      <td>
+        <div class="sig-title">乙方（蓋章）</div>
+        <div class="sig-field">法定代表人 / 授權代表：<span class="sig-line">&nbsp;</span></div>
+        <div class="sig-field">日期：<span class="sig-line">&nbsp;</span></div>
+      </td>
+    </tr>
+  </table>
 
 </div>
 
